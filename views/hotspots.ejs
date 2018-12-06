@@ -1,3 +1,5 @@
+<% include partials/header %>
+
 <h1>This is the hotspots page</h1>
 
 <% spots.forEach(function(spot){ %>
@@ -6,3 +8,5 @@
 		<img src="<%= spot.image %>">
 	</div>
 <% }) %>
+
+<% include partials/footer %>
