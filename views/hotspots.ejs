@@ -9,13 +9,17 @@
 			</p>
 		</div>
 	</header>
-
-
-<% spots.forEach(function(spot){ %>
-	<div>
-		<h4><%= spot.name %></h4>
-		<img src="<%= spot.image %>">
+	<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+		<% spots.forEach(function(spot){ %>
+			<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					<img src="<%= spot.image %>">
+					<div class="caption">
+						<h4><%= spot.name %></h4>
+					</div>
+				</div>
+			</div>
+		<% }) %>
 	</div>
-<% }) %>
 </div>
 <% include partials/footer %>
