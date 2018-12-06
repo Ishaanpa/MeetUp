@@ -1,5 +1,6 @@
 var express = require ("express")
 var app = express();
+var port = process.env.PORT || 3333;
 var bodyparser = require("body-parser");
 app.set("view engine","ejs");
 var spots = [
@@ -33,6 +34,6 @@ app.post("/hotspots", function(req, res){
 	res.redirect("/hotspots");
 });
 
-app.listen(3000,function(){
-	console.log("server is running");
+app.listen(port,function(){
+	console.log(`App started listening on port ${port}`);
 })
