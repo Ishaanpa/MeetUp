@@ -25,14 +25,14 @@ Spots.create({
 			console.log(spots);
 		}
 });
-var spots = [
-		{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
-		{name: "WALC", image: "https://pixabay.com/get/e83db5072df2033ed1584d05fb1d4e97e07ee3d21cac104491f4c171afeeb3b8_340.jpg" },
-		{name: "Lawson", image: "https://farm8.staticflickr.com/7683/16713808824_410320fc77.jpg"},
-		{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
-		{name: "WALC", image: "https://pixabay.com/get/e83db5072df2033ed1584d05fb1d4e97e07ee3d21cac104491f4c171afeeb3b8_340.jpg" },
-		{name: "Lawson", image: "https://farm8.staticflickr.com/7683/16713808824_410320fc77.jpg"}
-	]
+//var spots = [
+	//	{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
+	//	{name: "WALC", image: "https://pixabay.com/get/e83db5072df2033ed1584d05fb1d4e97e07ee3d21cac104491f4c171afeeb3b8_340.jpg" },
+	//	{name: "Lawson", image: "https://farm8.staticflickr.com/7683/16713808824_410320fc77.jpg"},
+	//	{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
+	//	{name: "WALC", image: "https://pixabay.com/get/e83db5072df2033ed1584d05fb1d4e97e07ee3d21cac104491f4c171afeeb3b8_340.jpg" },
+	//	{name: "Lawson", image: "https://farm8.staticflickr.com/7683/16713808824_410320fc77.jpg"}
+	//]
 app.use(bodyparser.urlencoded({extended: true}));
 
 app.get("/",function(req,res){
@@ -40,8 +40,14 @@ app.get("/",function(req,res){
 });
 
 app.get("/hotspots", function(req, res){
-	
-	res.render("hotspots", {spots:spots});
+	Spots.find({},function(err,spots){
+		if(err){
+			console.log(err);
+		}else{
+			res.render("hotspots",{spots:spots});
+		}
+	});
+	//res.render("hotspots", {spots:spots});
 });
 
 app.get("/hotspots/new", function(req, res){
