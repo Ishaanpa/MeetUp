@@ -1,10 +1,16 @@
 <% include partials/header %>
 <div class="container">
 	<header class="jumbotron">
-		<h1>Welcome to MeetUp!</h1>	
+		<div class="container">
+			<h1>Welcome to MeetUp!</h1>	
+			<p>The hangout spots that boilermakers choose</p>
+			<p>
+			<a class="btn btn-primary btn-lg "href="/hotspots/new"> Add new hotspot </a>
+			</p>
+		</div>
 	</header>
 
-<a href="/hotspots/new"> Add new hotspot </a>
+
 <% spots.forEach(function(spot){ %>
 	<div>
 		<h4><%= spot.name %></h4>
