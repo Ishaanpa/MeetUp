@@ -2,6 +2,7 @@ var express = require ("express")
 var app = express();
 var port = process.env.PORT || 3000;
 var bodyparser = require("body-parser");
+var mongoose = require("mongoose");
 app.set("view engine","ejs");
 var spots = [
 		{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
