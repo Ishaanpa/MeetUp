@@ -1,13 +1,16 @@
 <% include partials/header %>
+<div class="container">
+	<div class="row">
+		<h1> Create a new hotspot </h1>
 
-<h1> Create a new hotspot </h1>
+		<form action="/hotspots" method="POST">
+			<input class="form-control" type="text" name="name" placeholder="name">
+			<input class="form-control" type="text" name="image" placeholder="image url">
+			<button class="btn btn-lg btn-default">Submit!</button>
+		</form>
 
-<form action="/hotspots" method="POST">
-	<input type="text" name="name" placeholder="name">
-	<input type="text" name="image" placeholder="image url">
-	<button>Submit!</button>
-</form>
-
-<a href="/hotspots">Go back</a>
+		<a href="/hotspots">Go back</a>
+	</div>
+</div>
 
 <% include partials/footer %>
