@@ -1,1 +1,8 @@
 <h1>This is the hotspots page</h1>
+
+<% spots.forEach(function(spot){ %>
+	<div>
+		<h4><%= spot.name %></h4>
+		<img src="<%= spot.image %>">
+	</div>
+<% }) %>
