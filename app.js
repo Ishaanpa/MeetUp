@@ -1,7 +1,9 @@
 var express = require ("express")
-var app = express()
-
+var app = express();
+var bodyparser = require("body-parser");
 app.set("view engine","ejs");
+
+app.use(bodyparser.urlencoded({extended: true}));
 
 app.get("/",function(req,res){
 	res.render("landing");
@@ -14,6 +16,10 @@ app.get("/hotspots", function(req, res){
 		{name: "Lawson", image: "https://www.photosforclass.com/download/flickr-2480920040"}
 	]
 	res.render("hotspots", {spots:spots});
+});
+
+app.post("/hotspots",function(req, res){
+
 });
 
 app.listen(3000,function(){
