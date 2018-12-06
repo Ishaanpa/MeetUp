@@ -18,6 +18,10 @@ app.get("/hotspots", function(req, res){
 	res.render("hotspots", {spots:spots});
 });
 
+app.get("/hotspots/new", function(req, res){
+	res.render("new.ejs");
+});
+
 app.post("/hotspots",function(req, res){
 
 });
