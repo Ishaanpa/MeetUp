@@ -4,6 +4,13 @@ var port = process.env.PORT || 3000;
 var bodyparser = require("body-parser");
 var mongoose = require("mongoose");
 app.set("view engine","ejs");
+
+mongoose.connect("mongodb://localhost:27017/hot_spot", {useNewUrlParser: true});
+
+var hotspotSchema = new mongoose.Schema({
+	name: String,
+	image: String
+});
 var spots = [
 		{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
 		{name: "WALC", image: "https://pixabay.com/get/e83db5072df2033ed1584d05fb1d4e97e07ee3d21cac104491f4c171afeeb3b8_340.jpg" },
