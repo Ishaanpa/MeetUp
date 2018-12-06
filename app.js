@@ -11,6 +11,20 @@ var hotspotSchema = new mongoose.Schema({
 	name: String,
 	image: String
 });
+
+var Spots = mongoose.model("Spots", hotspotSchema);
+Spots.create({
+	name:"Place",
+	image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"
+	}, function(err, spots){
+		if(err){
+			console.log(err);
+		}
+		else{
+			console.log("We have a spot");
+			console.log(spots);
+		}
+});
 var spots = [
 		{name: "Hicks", image: "https://farm6.staticflickr.com/5125/13548348064_ba400533ab.jpg"},
 		{name: "WALC", image: "https://pixabay.com/get/e83db5072df2033ed1584d05fb1d4e97e07ee3d21cac104491f4c171afeeb3b8_340.jpg" },
